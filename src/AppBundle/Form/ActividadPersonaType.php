@@ -17,7 +17,7 @@ class ActividadPersonaType extends AbstractType
     {
         $builder
             ->add('fecha', DateTimeType::class, array(
-                "widget"=>"single_text",                                                
+                "widget"=>"choice",                                                
                 "attr" => array("class"=>"form-control","placeholder"=>"2017-09-11", "title"=>"Ingrese la fecha de la Actividad")                                
             ))             
             ->add('idPersona')

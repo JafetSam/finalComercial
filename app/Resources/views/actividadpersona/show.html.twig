@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Actividad Persona</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idactper</th>
+                <td>{{ actividadPersona.idActPer }}</td>	
+            </tr>
+			
+            <tr>
+                <th>Fecha</th>
+                <td>{% if actividadPersona.fecha %}{{ actividadPersona.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
+				
+            </tr>
+			
+			<tr>
+				<th>Persona</th>
+				<td>{{actividadPersona.idPersona}}</td>
+			<tr>
+				
+			<tr>
+				<th>Actividad</th>
+				<td>{{actividadPersona.idActividad}}</td>
+				
+			</tr>
+        </tbody>
+    </table>
+			
+			<br>
+
+    <ul>
+
+            <a class="btn btn-danger" href="{{ path('actividadpersona_index') }}">Regresar</a>
+      
+            <a class="btn btn-success" href="{{ path('actividadpersona_edit', { 'id': actividadPersona.idActPer }) }}">Editar</a>
+     
+    </ul>
+{% endblock %}

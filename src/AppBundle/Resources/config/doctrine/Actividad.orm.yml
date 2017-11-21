@@ -1,0 +1,27 @@
+AppBundle\Entity\Actividad:
+    type: entity
+    table: actividad
+    id:
+        idActividad:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_actividad
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        descripcion:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

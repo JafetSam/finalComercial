@@ -1,0 +1,46 @@
+AppBundle\Entity\ActividadPersona:
+    type: entity
+    table: actividad_persona
+    indexes:
+        IX_Relationship1:
+            columns:
+                - id_persona
+        IX_Relationship2:
+            columns:
+                - id_actividad
+    id:
+        idActPer:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_act_per
+            generator:
+                strategy: IDENTITY
+    fields:
+        fecha:
+            type: datetime
+            nullable: false
+    manyToOne:
+        idPersona:
+            targetEntity: Persona
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_persona:
+                    referencedColumnName: id_persona
+            orphanRemoval: false
+        idActividad:
+            targetEntity: Actividad
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_actividad:
+                    referencedColumnName: id_actividad
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

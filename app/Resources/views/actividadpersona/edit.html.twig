@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Editar Actividad Persona </h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input class="btn btn-success" type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+            <a class="btn btn-danger" href="{{ path('actividadpersona_index') }}">Back to the list</a>  
+    </ul>
+{% endblock %}

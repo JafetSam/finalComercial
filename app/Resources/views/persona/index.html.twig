@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Persona</h1>
+
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Usuario</th>
+                <th>Contrasena</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for persona in personas %}
+            <tr>
+                <td><a href="{{ path('persona_show', { 'id': persona.idPersona }) }}">{{ persona.idPersona }}</a></td>
+                <td>{{ persona.usuario }}</td>
+                <td>{{ persona.contrasena }}</td>
+                <td>{{ persona.nombre }}</td>
+                <td>{{ persona.apellido }}</td>
+                <td>
+                    <ul>
+                       
+                            <a class="btn btn-dark" href="{{ path('persona_show', { 'id': persona.idPersona }) }}">Detalle</a>
+                            <a class="btn btn-dark" href="{{ path('persona_edit', { 'id': persona.idPersona }) }}">Editar</a> 
+                            <a class="btn btn-dark" title="Clic si desea Eliminar" href="{{path('persona_delete',{"id":persona.idPersona})}}" class="glyphicon glyphicon-trash" onclick="return confirm('¿Está seguro que desea Eliminar?')">Eliminar</a>           
+                       
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   
+            <a class="btn btn-success"  href="{{ path('persona_new') }}">Nueva</a>
+      
+{% endblock %}

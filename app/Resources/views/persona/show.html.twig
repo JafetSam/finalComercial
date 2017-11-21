@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Persona</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idpersona</th>
+                <td>{{ persona.idPersona }}</td>
+            </tr>
+            <tr>
+                <th>Usuario</th>
+                <td>{{ persona.usuario }}</td>
+            </tr>
+            <tr>
+                <th>Contrasena</th>
+                <td>{{ persona.contrasena }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ persona.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Apellido</th>
+                <td>{{ persona.apellido }}</td>
+            </tr>
+        </tbody>
+    </table>
+			
+			<br>
+
+    <ul>
+
+            <a class="btn btn-danger" href="{{ path('persona_index') }}">Regresar</a>
+     
+            <a class="btn btn-success" href="{{ path('persona_edit', { 'id': persona.idPersona }) }}">Editar</a>
+ 
+    </ul>
+{% endblock %}

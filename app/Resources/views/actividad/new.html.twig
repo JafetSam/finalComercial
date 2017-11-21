@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Crear Actividad</h1>
+
+	
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="btn btn-success" type="submit" value="Crear" />
+    {{ form_end(form) }}
+
+	
+	<br>
+	
+    <ul>
+            <a class="btn btn-danger" href="{{ path('actividad_index') }}">Regresar</a>
+       
+    </ul>
+{% endblock %}

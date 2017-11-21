@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Actividad</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+		<center>
+                <td>{{ actividad.idActividad }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ actividad.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ actividad.descripcion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+			<br>
+    <ul>
+
+            <a class="btn btn-danger" href="{{ path('actividad_index') }}">Regresar</a>
+
+            <a class="btn btn-success" href="{{ path('actividad_edit', { 'id': actividad.idActividad }) }}">Editar</a>
+ 
+    </ul>
+{% endblock %}

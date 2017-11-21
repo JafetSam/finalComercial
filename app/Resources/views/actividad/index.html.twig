@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Actividad</h1>
+
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actividad in actividads %}
+            <tr>
+                <td><a href="{{ path('actividad_show', { 'id': actividad.idActividad }) }}">{{ actividad.idActividad }}</a></td>
+                <td>{{ actividad.nombre }}</td>
+                <td>{{ actividad.descripcion }}</td>
+                <td>
+                    <ul>
+                   
+                            <a class="btn btn-dark" href="{{ path('actividad_show', { 'id': actividad.idActividad }) }}">Detalle</a>
+                       
+                        
+                            <a class="btn btn-dark" href="{{ path('actividad_edit', { 'id': actividad.idActividad }) }}">Editar</a>
+                      
+                            <a class="btn btn-dark" title="Clic si desea Eliminar" href="{{path('actividad_delete',{"id":actividad.idActividad})}}" class="glyphicon glyphicon-trash" onclick="return confirm('¿Está seguro que desea Eliminar?')">Eliminar</a>           
+                        
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+ 
+            <a class="btn btn-success" href="{{ path('actividad_new') }}">Nueva</a>
+   
+{% endblock %}

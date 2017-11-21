@@ -1,0 +1,83 @@
+app_actividad_persona:
+    resource: "@AppBundle/Controller/ActividadPersonaController.php"
+    type:     annotation
+
+app_persona:
+    resource: "@AppBundle/Controller/PersonaController.php"
+    type:     annotation
+
+app_actividad:
+    resource: "@AppBundle/Controller/ActividadController.php"
+    type:     annotation
+
+blog:
+    resource: "@BlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+actividadpersona_login:
+    path: login/
+    defaults: {_controller: AppBundle:ActividadPersona:login}
+
+actividad_index:
+    path: actividad
+    defaults: {_controller: AppBundle:Actividad:index}
+
+actividad_new:
+    path: actividad/new
+    defaults: {_controller: AppBundle:Actividad:new}
+    
+actividad_show:
+    path: actividad/{id}
+    defaults: {_controller: AppBundle:Actividad:show}
+    
+actividad_edit:
+    path: actividad/{id}/edit
+    defaults: {_controller: AppBundle:Actividad:edit}
+
+actividad_delete:
+    path: actividad/{id}/delete
+    defaults: {_controller: AppBundle:Actividad:delete}
+    
+actividadpersona_index:
+    path: actividadpersona
+    defaults: {_controller: AppBundle:ActividadPersona:index}
+
+actividadpersona_new:
+    path: actividadpersona/new
+    defaults: {_controller: AppBundle:ActividadPersona:new}
+    
+actividadpersona_show:
+    path: actividadpersona/{id}
+    defaults: {_controller: AppBundle:ActividadPersona:show}
+    
+actividadpersona_edit:
+    path: actividadpersona/{id}/edit
+    defaults: {_controller: AppBundle:ActividadPersona:edit}
+
+actividadpersona_delete:
+    path: actividadpersona/{id}/delete
+    defaults: {_controller: AppBundle:ActividadPersona:delete}    
+
+persona_index:
+    path: persona
+    defaults: {_controller: AppBundle:Persona:index}
+    
+persona_new:
+    path: persona/new
+    defaults: {_controller: AppBundle:Persona:new}
+    
+persona_show:
+    path: persona/{id}
+    defaults: {_controller: AppBundle:Persona:show}
+    
+persona_edit:
+    path: persona/{id}/edit
+    defaults: {_controller: AppBundle:Persona:edit}
+
+persona_delete:
+    path: persona/{id}/delete
+    defaults: {_controller: AppBundle:Persona:delete}

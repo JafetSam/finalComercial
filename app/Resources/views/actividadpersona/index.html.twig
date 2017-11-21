@@ -10,6 +10,7 @@
                 <th>Fecha</th>
 				<th>Hora</th>
 				<th>Actividad</th>
+				<th>Persona</th>
                 <th></th>
             </tr>
         </thead>
@@ -19,7 +20,8 @@
                 <td><a href="{{ path('actividadpersona_show', { 'id': actividadPersona.idActPer }) }}">{{ actividadPersona.idActPer }}</a></td>		
 				<td>{% if actividadPersona.fecha %}{{ actividadPersona.fecha|date('Y-m-d') }}{% endif %}</td>
                 <td>{% if actividadPersona.fecha %}{{ actividadPersona.fecha|date('H:i:s') }}{% endif %}</td>
-				<td>{{ actividadPersona.idActividad}} </td>>
+				<td>{{ actividadPersona.idActividad}} </td>
+				<td>{{actividadPersona.idPersona}}</td>
 				<td>
                     <ul>
                        

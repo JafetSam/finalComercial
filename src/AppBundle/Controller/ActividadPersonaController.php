@@ -28,10 +28,10 @@ class ActividadPersonaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $reservacions = $em->getRepository('AppBundle:ActividadPersona')->findAll();
+        $actividadPersonas = $em->getRepository('AppBundle:ActividadPersona')->findAll();
                                                 
         return $this->render('actividadpersona/login.html.twig', array(
-            'reservacions' => $reservacions,
+            'actividadPersonas' => $actividadPersonas,
         ));
     }
     

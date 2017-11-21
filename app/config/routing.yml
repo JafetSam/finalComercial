@@ -18,8 +18,22 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
-actividadpersona_login:
+
+
+
+
+
+persona_login:
     path: login/
+    defaults: {_controller: AppBundle:Persona:login}
+    
+
+
+
+
+
+actividadpersona_login:
+    path: login2/
     defaults: {_controller: AppBundle:ActividadPersona:login}
 
 actividad_index:

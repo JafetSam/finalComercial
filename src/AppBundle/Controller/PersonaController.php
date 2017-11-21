@@ -23,6 +23,26 @@ class PersonaController extends Controller
             'personas' => $personas,
         ));
     }
+	
+	
+	
+	
+
+	
+     public function loginAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $personas = $em->getRepository('AppBundle:Persona')->findAll();
+                                                
+        return $this->render('persona/login.html.twig', array(
+            'personas' => $personas,
+        ));
+    }
+	
+	
+	
+	
 
  
     public function newAction(Request $request)

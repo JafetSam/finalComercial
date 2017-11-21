@@ -1,7 +1,15 @@
-  
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
 
 <body background="{{asset('fondo.jpg')}}">    
+
+
+
+
 	
+
 	
 	
 	
@@ -11,8 +19,88 @@
 	
 	
 <div align="center">
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		
+
+        {% for persona in personas %}
+              <h3>{{ persona.usuario }}</h3>
+                <h3>{{ persona.contrasena }}</h3>
+				
+				
+					{% if persona.usuario=='admin' %}
+							
+        <input type="submit" value="Aceptar">
+		    {% else %}
+						{%endif%}
+	
+        {% endfor %}
+       
+	
+	
+	
+	
+	
+	<table class="table table-striped table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Fecha</th>
+				<th>Hora</th>
+				<th>Actividad</th>
+				<th>Persona</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actividadPersona in actividadPersonas %}
+            <tr>
+                <td><a href="{{ path('actividadpersona_show', { 'id': actividadPersona.idActPer }) }}">{{ actividadPersona.idActPer }}</a></td>		
+				<td>{% if actividadPersona.fecha %}{{ actividadPersona.fecha|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if actividadPersona.fecha %}{{ actividadPersona.fecha|date('H:i:s') }}{% endif %}</td>
+				<td>{{ actividadPersona.idActividad}} </td>
+				<td>{{actividadPersona.idPersona}}</td>
+				<td>
+                    <ul>
+                       
+                            <a class="btn btn-dark" href="{{ path('actividadpersona_show', { 'id': actividadPersona.idActPer }) }}">Detalle</a>
+                      
+                            <a class="btn btn-dark" href="{{ path('actividadpersona_edit', { 'id': actividadPersona.idActPer }) }}">Editar</a>
+                      
+                            <a class="btn btn-dark" title="Clic si desea Eliminar" href="{{path('actividadpersona_delete',{"id":actividadPersona.idActPer})}}" class="glyphicon glyphicon-trash" onclick="return confirm('¿Está seguro que desea Eliminar?')">Eliminar</a>           
+                       
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+		
+	
+	
+	
+	
     <form action="{{path('actividadpersona_index')}}" method="POST">
-        <br>
+       
+		
+		
+		
+		
+		
+		
+		<br>
         <br>
         <br>
         <br>
@@ -30,25 +118,11 @@
         <hr/>
         <input type="submit" value="Aceptar">
 		
-		
-		
 			
-	   
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-		
-		
     </form>
     </div>    
-</body>
 
 
 
+     
+{% endblock %}
